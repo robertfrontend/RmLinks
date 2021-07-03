@@ -1,0 +1,39 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Robert Romero",
+            "username": "robertrm0",
+            "background": "#5E17EB",
+            "colorlinks": "white",
+            "avatar": "https://i.postimg.cc/x8ynjnnW/editar.jpg",
+            "links": [
+                {
+                    "red": "instagram",
+                    "icon": true,
+                    "url": "robertrm0"
+                },
+                {
+                    "red": "snapchat",
+                    "icon": true,
+                    "url": "robertrm0"
+                },
+                {
+                    "red": "twitter",
+                    "icon": true,
+                    "url": "robertrm0"
+                },
+                {
+                    "red": "facebook",
+                    "icon": true,
+                    "url": "robertrm0"
+                },
+                {
+                    "red": "pagina web",
+                    "icon": false,
+                    "url": "robertrm0"
+                }
+            ]
+        }
+    ]
+}

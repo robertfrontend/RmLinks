@@ -1,33 +1,29 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import './App.css'
+
+import { DataProvider  } from './context/DataContenxt';
 import Profile from './components/Profile'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const color = '#5E17EB'
 
-  const [colorfront, setColorFront] = useState(false)
 
-  useEffect(() => {
-    if (color === '#5E17EB') {
-      setColorFront(false)
-    } else {
-      setColorFront(true)
-    }
-  }, [])
-  
+  // const color = '#5E17EB'
+  const [color, setColor] = useState('')
+
+  const handleData = (data) => {
+    console.log(data, 'data app');
+    setColor(data.background)
+  }
 
   return (
-    <>
-      <Header color={colorfront}>
+    <DataProvider>
+      <Header color={color} >
         <div className="content"><h4>Rm Links</h4></div>
       </Header>
-      <Profile color={color} ></Profile>
-      <FooterLink href="#" >
-        Create your link
-      </FooterLink>
-    </>
+      <Profile handleData={handleData}
+      ></Profile>
+    </DataProvider>
   )
 }
 
@@ -40,10 +36,10 @@ const Header = styled.header`
   .content{
     text-align: left;
     width: auto;
-    color:  ${color => color.color ? 'white' : '#5E17EB'|| 'white'};
+    color:  ${color => color.color === '#5E17EB' ? '#5E17EB' : 'white'};
     padding: 0.3em;
     padding-left: 1em;
-    background-color: ${color => color.color ? '#5E17EB' : 'white'|| 'white'};
+    background-color: ${color => color.color === '#5E17EB' ? 'white' : '#5E17EB'};
     width: 30%;
     margin-left: auto;
     border-bottom-left-radius: 20px;

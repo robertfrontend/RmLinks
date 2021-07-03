@@ -1,60 +1,39 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import styled from 'styled-components'
-
-
+import CardLink from './CardLink';
+import { DataContext } from '../context/DataContenxt';
 
 const Profile = (props) => {
-    console.log(props);
-    const links = [
-        {
-            red: 'instagram',
-            icon: true,
-            url: 'robertrm0',
-        },
-        {
-            red: 'snapchat',
-            icon: true,
-            url: 'robertrm0'
-        },
-        {
-            red: 'twitter',
-            icon: true,
-            url: 'robertrm0'
-        },
-        {
-            red: 'facebook',
-            icon: true,
-            url: 'robertrm0'
-        },
-        {
-            red: 'pagina web',
-            icon: false,
-            url: 'robertrm0'
-        },
+    const { data } = useContext(DataContext)
+    console.log(data, 'data del context');
 
-    ]
+
+    useEffect(() => {
+        enviarDatos()
+    }, [])
+
+    // enviar datos al app
+    const enviarDatos = () => {
+        props.handleData(data)
+    }
+
+
     return (
-        <ProfileContent color={props}>
+        <ProfileContent
+            color={data.background}>
             <div className="content">
+                <div className="avatar">
+                    <img src={data.avatar} alt="" />
+                </div>
                 <div className="namePorfile">
-                    <h2>Robert Romero</h2>
-                    <h3>@username</h3>
+                    <h2> {data.name} </h2>
+                    <h3>@{data.username}</h3>
                 </div>
                 <div className="links">
                     {
-                        links.map(link => (
-                            <LinkProfile>
-                                <div>
-                                    {
-                                        link.icon ? (
-                                            <i className={`fab fa-${link.red}`}  ></i>
-                                        ) : (
-                                            <i class="fas fa-link"></i>
-                                        )
-                                    }
-                                </div>
-                               <div className="nameLink"> {link.red}</div>
-                            </LinkProfile>
+                        data.links.map((link, key) => (
+                            <CardLink data={link} key={key}>
+                            </CardLink>
                         ))
                     }
                 </div>
@@ -64,7 +43,7 @@ const Profile = (props) => {
 }
 
 const ProfileContent = styled.div `
-    background-color: ${props => props.color.color || 'red'};
+    background-color: ${props =>  props.color ? props.color : 'red'};
     width: 100%;
     min-height: 100vh;
     text-align: center;
@@ -76,6 +55,17 @@ const ProfileContent = styled.div `
         justify-content: center;
         align-items: center;
         color: white;
+        .avatar {
+            padding-top: 2em;
+            width: 90px;
+            height: 90px;
+            img {
+                width: inherit;
+                height: inherit;
+                border-radius: 50px;
+                object-fit: cover;
+            }
+        }
         .namePorfile {
             padding: 1em;
             h2 {
@@ -87,29 +77,4 @@ const ProfileContent = styled.div `
         }
     }
 `
-
-const LinkProfile = styled.a`
-    padding: 0.2em 2em;
-    font-size: 150%;
-    text-align: center;
-    margin: 0.4em 0;
-    cursor: pointer;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
-    border-top: 2px solid rgba(255, 255, 255, 0.205);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.205);
-    border-radius: 8px;
-    i {
-        padding: 0 0.3em;
-    }
-    display: flex;
-    flex-direction: row;
-    div {
-        padding: 0 0.1em;
-    }
-    .nameLink{
-        text-transform: capitalize;
-    }
-`
-
 export default Profile

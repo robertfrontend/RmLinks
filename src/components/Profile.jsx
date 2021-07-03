@@ -43,10 +43,13 @@ const Profile = (props) => {
 }
 
 const ProfileContent = styled.div `
-    background-color: ${props =>  props.color ? props.color : 'red'};
+    /* background-color: ${props => props.color ? props.color : 'red'}; */
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(94,23,235,1) 100%);
     width: 100%;
     min-height: 100vh;
     text-align: center;
+    padding-bottom: 2em;
     .content {
         width: 100%;
         min-height: inherit;

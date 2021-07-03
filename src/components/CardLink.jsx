@@ -6,7 +6,10 @@ const CardLink = (props) => {
 
     return (
         <>
-            <ContentCardLink>
+            <ContentCardLink href = {
+                data.url
+            }
+            target = "_blank" >
              <div>
                     {
                         data.icon ? (
@@ -33,6 +36,8 @@ const ContentCardLink = styled.a `
     border-top: 2px solid rgba(255, 255, 255, 0.205);
     border-bottom: 2px solid rgba(255, 255, 255, 0.205);
     border-radius: 8px;
+    text-decoration: none !important;
+    color: white;
     i {
         padding: 0 0.3em;
     }

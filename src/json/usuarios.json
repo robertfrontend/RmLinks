@@ -3,35 +3,35 @@
         {
             "id": 1,
             "name": "Robert Romero",
-            "username": "robertrm0",
+            "username": "robertfrontend",
             "background": "#5E17EB",
             "colorlinks": "white",
             "avatar": "https://i.postimg.cc/x8ynjnnW/editar.jpg",
             "links": [
                 {
-                    "red": "instagram",
+                    "red": "linkedin",
                     "icon": true,
-                    "url": "robertrm0"
+                    "url": "https://www.linkedin.com/in/robertfrontend/"
                 },
                 {
-                    "red": "snapchat",
+                    "red": "instagram",
                     "icon": true,
-                    "url": "robertrm0"
+                    "url": "https://www.instagram.com/robertrm0/"
+                },
+                {
+                    "red": "github",
+                    "icon": true,
+                    "url": "https://github.com/robertfrontend"
                 },
                 {
                     "red": "twitter",
                     "icon": true,
-                    "url": "robertrm0"
+                    "url": "https://twitter.com/robertfrontend"
                 },
                 {
-                    "red": "facebook",
-                    "icon": true,
-                    "url": "robertrm0"
-                },
-                {
-                    "red": "pagina web",
+                    "red": "Portafolio",
                     "icon": false,
-                    "url": "robertrm0"
+                    "url": "https://robertfrontend.github.io/"
                 }
             ]
         }

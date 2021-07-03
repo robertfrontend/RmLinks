@@ -23,6 +23,13 @@ function App() {
       </Header>
       <Profile handleData={handleData}
       ></Profile>
+      <FooterLink>
+        <p> Creado con ❤ por <span>@robertfronted</span> &copy; 2021</p>
+        <br />
+        <p><a href="https://github.com/robertfrontend/RmLinks" target="_blank">
+          Repositorio⭐<i className="fab fa-github"></i>
+        </a></p>
+      </FooterLink>
     </DataProvider>
   )
 }
@@ -40,25 +47,35 @@ const Header = styled.header`
     padding: 0.3em;
     padding-left: 1em;
     background-color: ${color => color.color === '#5E17EB' ? 'white' : '#5E17EB'};
+
     width: 30%;
     margin-left: auto;
     border-bottom-left-radius: 20px;
   }
 `
 
-const FooterLink = styled.a`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+const FooterLink = styled.footer`
   width: 100%;
   background-color: ${color => color.color ? '#5E17EB' : 'white'|| 'white'};
-  padding: 0.3em;
+  padding: 1em 0;
   text-align: center;
   color:  ${color => color.color ? 'white' : '#5E17EB'|| 'white'};
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 300;
+  p {
+    letter-spacing: 0.2px;
+    span {
+      font-weight: 600;
+    }
+    a {
+      text-decoration: none;
+    }
+    i {
+      color: #2c3e50;
+      font-size: 1.2em;
+       padding-left: 0.2em;
+    }
+  }
 `
 
 

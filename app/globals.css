@@ -1,0 +1,129 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Layout ─────────────────────────────────────────────── */
+
+.page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #5E17EB 0%, #22C1C3 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 20px 48px;
+}
+
+/* ─── Profile ────────────────────────────────────────────── */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 14px;
+}
+
+.name {
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.username {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.bio {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
+
+/* ─── Links ──────────────────────────────────────────────── */
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.link-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+.link-card:active {
+  transform: translateY(0);
+}
+
+.link-icon {
+  font-size: 1.15rem;
+  min-width: 26px;
+  text-align: center;
+}
+
+.link-label {
+  flex: 1;
+  text-align: center;
+}
+
+/* ─── Footer ─────────────────────────────────────────────── */
+
+.footer {
+  margin-top: 48px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
